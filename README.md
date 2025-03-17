@@ -32,12 +32,12 @@ Ce projet implémente un **serveur WebSocket** simple en **Java**, permettant la
 
 1. Clonez le dépôt :
 
-   ```
-   git clone https://github.com/vava408/WebSocket.git
+  
+       git clone https://github.com/vava408/WebSocket.git
 
-    Accédez au répertoire du projet :
+   Accédez au répertoire du projet :
 
-   cd WebSocket
+       cd WebSocket
 
 Compilez le projet avec:
 
@@ -51,26 +51,26 @@ Compilez le projet avec:
 
     Connectez un client WebSocket à l'adresse ws://localhost:9000.
 
-🤝 Contributions
+## 🤝 Contributions
 
 Les contributions sont les bienvenues ! Ouvrez une issue pour discuter des améliorations ou soumettez une pull request.
 
 _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-#🌍 WebSocket (English Version)
+# 🌍 WebSocket (English Version)
 
 This project implements a simple **WebSocket server in Java**, allowing real-time communication between a server and clients.
 
 ---
 
-##🚀 Current Features
+## 🚀 Current Features
 
 ✔ **WebSocket Server**: Real-time communication between the server and clients.
 ✔ **Single-user connection**: Currently, only one user can interact with the server at a time.
 
 ---
 
-##🛠️ Planned Features
+## 🛠️ Planned Features
 
 ❌ **Admin login system**: Secure authentication for administrators.
 ❌ **Logout system**: Allow users to properly disconnect.
@@ -78,7 +78,7 @@ This project implements a simple **WebSocket server in Java**, allowing real-tim
 ❌ **Multi-user support**: Allow multiple users to connect and interact with the server simultaneously.
 
 ---
-##📁 Project Structure
+## 📁 Project Structure
 
 
   ServeurSimple2.java: Main implementation of the WebSocket server.
@@ -86,7 +86,7 @@ This project implements a simple **WebSocket server in Java**, allowing real-tim
   websocket/: Contains the client that connects to the server.
 
 
-📥 Installation
+## 📥 Installation
 
       git clone https://github.com/vava408/WebSocket.git
 
@@ -106,6 +106,6 @@ Build the project:
     
     Connect a WebSocket client to ws://localhost:9000.
 
-🤝 Contributions
+## 🤝 Contributions
 
 Contributions are welcome! Open an issue to discuss improvements or submit a pull request.
