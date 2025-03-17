@@ -73,8 +73,11 @@ This project implements a simple **WebSocket server in Java**, allowing real-tim
 ## 🛠️ Planned Features
 
 ❌ **Admin login system**: Secure authentication for administrators.
+
 ❌ **Logout system**: Allow users to properly disconnect.
+
 ❌ **Easy server deployment**: Tools or scripts to easily create new servers.
+
 ❌ **Multi-user support**: Allow multiple users to connect and interact with the server simultaneously.
 
 ---
