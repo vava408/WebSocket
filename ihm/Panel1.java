@@ -8,10 +8,11 @@ import websocket.Client;
 
 public class Panel1 extends JPanel implements ActionListener
 {
-	private JLabel labMess;
+
 	private JTextField envoieMessage;
 	private JButton btnEnvoyer;
 	private JTextArea historiqueMessages; // Zone d'affichage des messages reçus
+	private JScrollBar ScrollHistoirique;
 
 	public Panel1()
 	{
@@ -20,6 +21,7 @@ public class Panel1 extends JPanel implements ActionListener
 		// Zone d'affichage des messages
 		this.historiqueMessages = new JTextArea(10, 30);
 		this.historiqueMessages.setEditable(false);
+		this.ScrollHistoirique = new JScrollbar (this.historiqueMessages, 0, 40, 0, 255);
 		this.add(new JScrollPane(this.historiqueMessages), BorderLayout.CENTER);
 
 		// Champ de texte et bouton d'envoi
@@ -35,7 +37,6 @@ public class Panel1 extends JPanel implements ActionListener
 		this.btnEnvoyer.addActionListener(this);
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e)
 	{
 		String message = this.envoieMessage.getText().trim();

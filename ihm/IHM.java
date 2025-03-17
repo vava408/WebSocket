@@ -14,6 +14,4 @@ public class IHM extends JFrame
 
 		this.setVisible(true);
 	}
-
-
 }
