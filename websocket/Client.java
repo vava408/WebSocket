@@ -21,14 +21,47 @@ public class Client
 		SwingUtilities.invokeLater(Client::launchUI);
 		System.out.println("Connexion au serveur...");
 
+		try
+		{
+			socket = new Socket(HOSTNAME, PORTNUMBER);
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			out = new PrintWriter(socket.getOutputStream(), true);
 
+			System.out.println("Connecté au serveur");
+
+			// Thread pour la réception des messages
+			Thread reception = new Thread(() -> {
+				try
+				{
+					String messageRecu;
+					while ((messageRecu = in.readLine()) != null)
+					{ // Attente continue
+						Client.messageRecu = messageRecu;
+						System.out.println("Serveur: " + messageRecu);
+						//envoie le message recu a Panel1
+						panel1.update(messageRecu);
+					}
+				} catch (IOException e)
+				{
+					System.err.println("Erreur de réception : " + e.getMessage());
+				}
+			});
+
+			reception.start();
+
+		} catch (IOException e)
+		{
+			System.err.println("Erreur du client : " + e.getMessage());
+		}
 	}
-
+	
+	//methode pour recuperer le message envoyer par le servuers 
 	public static String getmessage()
 	{
 		return messageRecu;
 	}
 
+	//permet d'envoyer un message au serveur a partir du message de Panel1
 	public static void envoyerMessage(String message)
 	{
 		if (out != null)
@@ -37,7 +70,7 @@ public class Client
 		}
 	}
 
-
+	//deconncete l utilisateur 
 	public static void Deconnexion() 
 	{
 		try
@@ -47,8 +80,8 @@ public class Client
 		{
 			e.printStackTrace();
 		}
-	}
-
+	}	
+	//reconnecte l utilisateur
 	public static void restart()
 	{
 		try
@@ -64,7 +97,6 @@ public class Client
 		}
 
 	}
-	
 
 	private static void launchUI()
 	{

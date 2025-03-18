@@ -75,17 +75,21 @@ public class Panel1 extends JPanel implements ActionListener
 			Client.restart();
 		}
 	}
-
+	//uptadde les messges envoyer par le serveur
 	public void update(String serveurMessage)
 	{
+		// Ajoute le message reçu du serveur
 		this.historiqueMessages.append("Serveur : " + serveurMessage + "\n");
 		// Faire défiler automatiquement vers le bas après l'ajout d'un message
 		this.historiqueMessages.setCaretPosition(this.historiqueMessages.getDocument().getLength());
 	}
 
+	//update les messages envoyer par le client
 	public void update()
 	{
+		//ajoute le message envoyer par le client
 		this.historiqueMessages.append("Client : " + message + "\n");
+		// Faire défiler automatiquement vers le bas après l'ajout d'un message
 		this.historiqueMessages.setCaretPosition(this.historiqueMessages.getDocument().getLength());
 	}
 }
