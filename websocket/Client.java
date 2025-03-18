@@ -8,49 +8,20 @@ import ihm.Panel1;
 
 public class Client
 {
+	private static final String HOSTNAME = "localhost";
+	private static final int PORTNUMBER = 9000;
+
 	private static String messageRecu;
 	private static Panel1 panel1;
 	private static PrintWriter out;
+	private static Socket socket;
 
 	public static void main(String[] args)
 	{
 		SwingUtilities.invokeLater(Client::launchUI);
-
-		String hostName = "localhost";
-		int portNumber = 9000;
-
 		System.out.println("Connexion au serveur...");
 
-		try
-		{
-			Socket socket = new Socket(hostName, portNumber);
-			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			out = new PrintWriter(socket.getOutputStream(), true);
 
-			System.out.println("Connecté au serveur");
-
-			Thread reception = new Thread(() -> {
-				try
-				{
-					String messageRecu;
-					while ((messageRecu = in.readLine()) != null)
-					{ // Attente continue
-						Client.messageRecu = messageRecu;
-						System.out.println("Serveur: " + messageRecu);
-						panel1.update(messageRecu);
-					}
-				} catch (IOException e)
-				{
-					System.err.println("Erreur de réception : " + e.getMessage());
-				}
-			});
-
-			reception.start();
-
-		} catch (IOException e)
-		{
-			System.err.println("Erreur du client : " + e.getMessage());
-		}
 	}
 
 	public static String getmessage()
@@ -65,6 +36,35 @@ public class Client
 			out.println(message);
 		}
 	}
+
+
+	public static void Deconnexion() 
+	{
+		try
+		{
+			socket.close();
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public static void restart()
+	{
+		try
+		{
+			socket = new Socket(HOSTNAME, PORTNUMBER);
+			System.out.println("reconnecté avec succès");
+		} catch (UnknownHostException e)
+		{
+			e.printStackTrace();
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+	
 
 	private static void launchUI()
 	{
