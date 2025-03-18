@@ -47,9 +47,13 @@ Compilez le projet avec:
 
     Lancez le serveur :
 
+    java ServeurSimple2
+    
+    Lancez le Client :
+
     java websocket.Client
 
-    Connectez un client WebSocket à l'adresse ws://localhost:9000.
+    
 
 ## 🤝 Contributions
 
