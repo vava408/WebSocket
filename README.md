@@ -18,10 +18,10 @@ Ce projet implémente un **serveur WebSocket** simple en **Java**, permettant la
 ❌ **Facilité de création de serveurs** : Outils ou scripts pour déployer facilement de nouveaux serveurs.  
 ❌ **Support multi-utilisateur** : Permettre à plusieurs utilisateurs de se connecter et d'interagir avec le serveur simultanément.  
 
-legende
-⌛ - En cours de développement  
-❌ - Non développé  
-✔️ - Validé
+legende :
+⌛ - **En cours de développement**
+❌ - **Non développé**
+✔️ - **Validé**
 
 ---
 
