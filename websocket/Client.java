@@ -37,7 +37,7 @@ public class Client
 					while ((messageRecu = in.readLine()) != null)
 					{ // Attente continue
 						Client.messageRecu = messageRecu;
-						System.out.println("Serveur: " + messageRecu);
+						System.out.println(messageRecu);
 						//envoie le message recu a Panel1
 						panel1.update(messageRecu);
 					}
@@ -87,15 +87,13 @@ public class Client
 		try
 		{
 			socket = new Socket(HOSTNAME, PORTNUMBER);
-			System.out.println("reconnecté avec succès");
-		} catch (UnknownHostException e)
-		{
-			e.printStackTrace();
+			out = new PrintWriter(socket.getOutputStream(), true); // Recréer le
+																	// PrintWriter
+			System.out.println("Reconnecté avec succès");
 		} catch (IOException e)
 		{
 			e.printStackTrace();
 		}
-
 	}
 
 	private static void launchUI()

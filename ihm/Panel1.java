@@ -52,6 +52,7 @@ public class Panel1 extends JPanel implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		message = this.envoieMessage.getText().trim();
+
 		//pour envoyer avec le boutton 
 		if(e.getSource() == this.btnEnvoyer)
 		{
@@ -64,17 +65,20 @@ public class Panel1 extends JPanel implements ActionListener
 				this.update(); // Mise à jour de l'historique
 			}
 		}
+
 		// pour se deconnecter avec le boutton
 		else if (e.getSource() == this.btnDeconnexion)
 		{
 			Client.Deconnexion();
 		}
+
 		// pour redémarrer avec le bouton
 		else if(e.getSource() == this.btnRestart)
 		{
 			Client.restart();
 		}
 	}
+
 	//uptadde les messges envoyer par le serveur
 	public void update(String serveurMessage)
 	{
