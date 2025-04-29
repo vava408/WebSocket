@@ -1,16 +1,18 @@
 package ihm;
 import java.awt.GridLayout;
 import javax.swing.*;
+import ihm.*;
 
 public class IHM extends JFrame
 {
-	public IHM(Panel1 panel1)
+	private Panel1 panel;
+	public IHM()
 	{
-
+		this.panel =new Panel1();
 		this.setSize(500, 600);
 
 		// Positionnement des composants
-		this.add(panel1);
+		this.add(panel);
 
 		this.setVisible(true);
 	}

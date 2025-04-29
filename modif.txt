@@ -1,0 +1,3 @@
+corection du restart
+Le serveur tourne tout le temps et ne s arrete plus apres un connexion
+Creation de nouveaux thread pour chaque utulisateur 

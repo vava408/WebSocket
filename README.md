@@ -14,9 +14,9 @@ Ce projet implémente un **serveur WebSocket** simple en **Java**, permettant la
 ## 🛠️ Fonctionnalités prévues  
 
 ❌ **Système de connexion des administrateurs** : Authentification sécurisée pour les administrateurs.  
-✔️ **Système de déconnexion** : Permet aux utilisateurs de se déconnecter proprement.  
+⌛ **Système de déconnexion** : Permet aux utilisateurs de se déconnecter proprement.  
 ❌ **Facilité de création de serveurs** : Outils ou scripts pour déployer facilement de nouveaux serveurs.  
-⌛ **Support multi-utilisateur** : Permettre à plusieurs utilisateurs de se connecter et d'interagir avec le serveur simultanément.  
+❌ **Support multi-utilisateur** : Permettre à plusieurs utilisateurs de se connecter et d'interagir avec le serveur simultanément.  
 
 legende :
 ⌛ - **En cours de développement**

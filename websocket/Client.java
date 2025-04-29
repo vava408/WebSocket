@@ -37,7 +37,7 @@ public class Client
 					while ((messageRecu = in.readLine()) != null)
 					{ // Attente continue
 						Client.messageRecu = messageRecu;
-						System.out.println(messageRecu);
+						System.out.println("Serveur: " + messageRecu);
 						//envoie le message recu a Panel1
 						panel1.update(messageRecu);
 					}
@@ -98,7 +98,7 @@ public class Client
 
 	private static void launchUI()
 	{
-		panel1 = new Panel1();
-		new IHM(panel1);
+		
+		new IHM();
 	}
 }
